@@ -1,0 +1,153 @@
+{
+  "version": "20.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "ApplicationStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ApplicationStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ApplicationStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ApplicationStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/bf8f89817939acf77a10b650fd613e71438c0ae3eec020bdb0869ce90472cb07.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ApplicationStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "ApplicationStack.assets"
+      ],
+      "metadata": {
+        "/ApplicationStack/TestOutput": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TestOutput",
+            "trace": [
+              "new ApplicationStack (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/infrastructure/lib/core/index.ts:7:5)",
+              "Object.<anonymous> (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/infrastructure/bin/infrastructure.ts:7:1)",
+              "Module._compile (node:internal/modules/cjs/loader:1105:14)",
+              "Module.m._compile (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/infrastructure/node_modules/ts-node/src/index.ts:1056:23)",
+              "Module._extensions..js (node:internal/modules/cjs/loader:1159:10)",
+              "Object.require.extensions.<computed> [as .ts] (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/infrastructure/node_modules/ts-node/src/index.ts:1059:12)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "main (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/infrastructure/node_modules/ts-node/src/bin.ts:198:14)",
+              "Object.<anonymous> (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/infrastructure/node_modules/ts-node/src/bin.ts:288:3)",
+              "Module._compile (node:internal/modules/cjs/loader:1105:14)",
+              "Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)",
+              "Module.load (node:internal/modules/cjs/loader:981:32)",
+              "Function.Module._load (node:internal/modules/cjs/loader:822:12)",
+              "Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)",
+              "node:internal/main/run_main_module:17:47"
+            ]
+          }
+        ],
+        "/ApplicationStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:22:24)",
+              "/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:642:26)",
+              "process.emit (node:events:527:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/ApplicationStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:31:27)",
+              "/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:166:5",
+              "visit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "injectMetadataResources (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:157:3)",
+              "Object.synthesize (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:642:26)",
+              "process.emit (node:events:527:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/ApplicationStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:463:17)",
+              "DefaultStackSynthesizer.synthesize (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:397:7)",
+              "/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:184:29",
+              "visit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "synthesizeTree (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:176:3)",
+              "Object.synthesize (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:39:3)",
+              "App.synth (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:642:26)",
+              "process.emit (node:events:527:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ],
+        "/ApplicationStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion",
+            "trace": [
+              "addBootstrapVersionRule (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:473:3)",
+              "DefaultStackSynthesizer.synthesize (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/stack-synthesizers/default-synthesizer.ts:397:7)",
+              "/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:184:29",
+              "visit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:231:5)",
+              "visit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:227:5)",
+              "synthesizeTree (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:176:3)",
+              "Object.synthesize (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/private/synthesis.ts:39:3)",
+              "App.synth (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/stage.ts:180:23)",
+              "process.<anonymous> (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/@aws-cdk/core/lib/app.ts:131:45)",
+              "Object.onceWrapper (node:events:642:26)",
+              "process.emit (node:events:527:28)",
+              "process.emit (node:domain:475:12)",
+              "process.emit (/Users/bhavik/Workspace/aws-sandbox/dojo/ps-serverless-app/node_modules/source-map-support/source-map-support.js:495:21)"
+            ]
+          }
+        ]
+      },
+      "displayName": "ApplicationStack"
+    }
+  }
+}
